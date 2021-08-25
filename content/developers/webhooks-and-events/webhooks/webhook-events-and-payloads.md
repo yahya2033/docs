@@ -99,6 +99,33 @@ Also, the `User-Agent` for the requests will have the prefix `GitHub-Hookshot/`.
 > }
 ```
 
+## branch_protection_rule
+
+TODO: fix (just copied from discussions for now)
+
+{% data reusables.webhooks.discussions-webhooks-beta %}
+
+Activity related to a discussion. For more information, see the "[Using the GraphQL API for discussions](/graphql/guides/using-the-graphql-api-for-discussions)."
+### Availability
+
+- Repository webhooks
+- Organization webhooks
+- {% data variables.product.prodname_github_apps %} with the `discussions` permission
+
+### Webhook payload object
+
+Key | Type | Description
+----|------|-------------
+`action` |`string` | The action performed. Can be `created`, `edited`, `deleted`, `pinned`, `unpinned`, `locked`, `unlocked`, `transferred`, `category_changed`, `answered`, or `unanswered`.
+{% data reusables.webhooks.discussion_desc %}
+{% data reusables.webhooks.repo_desc_graphql %}
+{% data reusables.webhooks.org_desc_graphql %}
+{% data reusables.webhooks.sender_desc %}
+
+### Webhook payload example
+
+{{ webhookPayloadsForCurrentVersion.discussion.created }}
+
 ## check_run
 
 {% data reusables.webhooks.check_run_short_desc %}
